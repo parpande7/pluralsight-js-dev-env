@@ -2,7 +2,8 @@ import express from "express";
 import path from "path";
 import open from "open";
 import webpack from "webpack";
-import config from "../src/webpack.config.dev";
+// import config from "../webpack.config.dev";
+import config from "../webpack";
 
 // var express = require("express");
 // var path = require("path");
