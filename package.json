@@ -4,13 +4,15 @@
   "description": "JavaScript development environment Pluralsight course by Parikshit Pandey",
   "type": "module",
   "scripts": {
-    "start": "babel-node buildScripts/srcServer.js",
-    "prestart": "babel-node buildScripts/startMessage.js"
+    "start": "npm-run-all --parallel open:src lint:watch",
+    "open:src": "babel-node buildScripts/srcServer.js",
+    "prestart": "babel-node buildScripts/startMessage.js",
+    "lint": "esw webpack.config.* src buildScripts",
+    "lint:watch": "npm run lint -- --watch"
   },
   "author": "Parikshit Pandey",
   "license": "MIT",
   "dependencies": {
-    "npm": "^6.0.1",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
@@ -43,6 +45,7 @@
     "open": "0.0.5",
     "rimraf": "2.5.4",
     "style-loader": "0.13.1",
+    "surge": "0.18.0",
     "webpack": "1.13.2",
     "webpack-dev-middleware": "1.8.4",
     "webpack-hot-middleware": "2.13.0",
